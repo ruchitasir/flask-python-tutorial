@@ -2,5 +2,31 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: beige;
+  background-color: rgb(240, 222, 229);
+}
+
+
+nav{
+  background-color: #98a7e4; 
+  font-size: 26px;
+  padding: 5px 0;
+  
+}
+
+nav ul, ul{
+  list-style-type: none;
+
+}
+
+nav li{
+  display: inline;
+  margin-right: 15px;
+}
+
+nav a{
+  text-decoration: none;
+}
+
+nav a:hover{
+  color:plum;
 }
