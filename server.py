@@ -2,10 +2,10 @@ from pymongo import MongoClient
 import pprint
 
 client = MongoClient()
+# CREATES A NEW DATABASE  AS flask_database 
+db = client.flask_database 
 
-db = client.flask_database
-
-
+######################### DOCUMENTS FOR LOOPS #################################
 for_loop ={
     'name' : 'For-loop',
     'description' : 'The for loop in Python is used to iterate over a sequence (list, tuple, string) or other iterable objects. Iterating over a sequence is called traversal. \n In python there is “for in” loop which is similar to for each loop in other languages.',
@@ -29,6 +29,8 @@ test_loop ={
     'name': 'test',
     'description': 'loop test'
 }
+
+######################### DOCUMENTS FOR OPERATORS #################################
 floor_operator = {
   "name": "Floor Division",
   "description": "Division that rounds down to the nearest integer. Also known as integer division.",
@@ -52,18 +54,25 @@ subtract_operator = {
   "uses": "In making a calculator"
 }
 
-
+################## INSERTED DOCUMENTS FOR LOOPS, LOOPS IS THE COLLECTION ################################
 #loop_id =  db.loops.insert_one(for_loop).inserted_id
 # db.loops.insert_many([ while_loop, range_loop])
 # retrieved_loop = db.loops.find_one({"_id": loop_id})
-
 # pprint.pprint(retrieved_loop)
 # print('LOOP:', retrieved_loop['name'])
 
-#query for several loops
+################## INSERTED DOCUMENTS FOR OPERATORS, OPERATORS IS THE COLLECTION ################################
+# db.operators.insert_many([ floor_operator, add_operator,subtract_operator])
+
+
+#query for loops
 print("Finding all loops :")
-for loop in db.loops.find():
-  pprint.pprint(loop)
+for lp in db.loops.find():
+  pprint.pprint(lp)
 print()
 
-# db.operators.insert_many([ floor_operator, add_operator,subtract_operator])
+#query for operators
+print("Finding all loops :")
+for operator in db.operators.find():
+  pprint.pprint(operator)
+print()
