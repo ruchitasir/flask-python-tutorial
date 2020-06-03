@@ -1,32 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="/static/style.css">
-    <title>Loops</title>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li> <a href='/'>Home</a> </li>
-            <li> <a href='/loops'>Loops</a> </li>
-            <li> <a href='/operators'>Operators</a> </li>
-        </ul>
-    </nav>  
+{% extends 'base.html' %}
+{% block title %}
+<title> Loops Flask Mongo DB practice</title>
+{% endblock %}
+
+{% block content %}
     <h1>Here is the information about loops for all the loop lovers!</h1>
     <table border = 1>
-    {% for retrieved_loop in retrieved_loops %}
-        {% for key, value in retrieved_loop.items() %}
-                <tr>
-                    <th> {{ key }} </th> 
-                <td> {{ value }} </td>
-              </tr>
-           
+        {% for retrieved_loop in retrieved_loops %}
+            {% for key, value in retrieved_loop.items() %}
+                    <tr>
+                        <th> {{ key }} </th> 
+                         <td> {{ value }} </td>
+                    </tr>
+            {% endfor %}
         {% endfor %}
-        <!-- {{ retrieved_loop['name']}} -->
-    {% endfor %}
-      </table>
+    </table>
     <hr/>
-</body>
-</html>
+{% endblock %}    

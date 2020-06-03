@@ -1,19 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="/static/style.css">
-    <title>Operators</title>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li> <a href='/'>Home</a> </li>
-            <li> <a href='/loops'>Loops</a> </li>
-            <li> <a href='/operators'>Operators</a> </li>
-        </ul>
-    </nav> 
+{% extends 'base.html' %}
+{% block title %}
+<title> Operators Flask Mongo DB practice</title>
+{% endblock %}
+
+{% block content %}
     <h1>Here is the information about operators for all the Operator lovers!</h1>
     <table border = 1>
     {% for retrived_operator in retrived_operators %}
@@ -21,38 +11,32 @@
              <tr>
                 <th> {{ key }} </th> 
                 <td> {{ value }} </td>
-              </tr>
-            
+            </tr>  
         {% endfor %}
-           
     {% endfor %}
       </table>
- 
-
-    <form   method = "post">  
-        <p>Enter a new operator:</p>
-        <p>
-            <label for="name">Name:</label>
-            <input type = "text" name = "name" required/>
-        </p>   
-        <p>    
-            <label for="description">Description:</label>
-            <input type = "text" name = "description" required/>
-        </p>
-        <p>
-            <label for="symbol">Symbol:</label>
-            <input type = "text" name = "symbol" required/>
-        </p>
-        <p>
-            <label for="example">Example:</label>
-            <input type = "text" name = "example" />
-        </p>
-        <p>    
-            <label for="uses">Uses:</label>
-            <input type = "text" name = "uses" />    
-        </p>
-        <p>   <input type = "submit" value = "submit" /> </p>
-      
-     </form>
-</body>
-</html>
+        <form   method = "post">  
+            <p>Enter a new operator:</p>
+            <p>
+                <label for="name">Name:</label>
+                <input type = "text" name = "name" required/>
+            </p>   
+            <p>    
+                <label for="description">Description:</label>
+                <input type = "text" name = "description" required/>
+            </p>
+            <p>
+                <label for="symbol">Symbol:</label>
+                <input type = "text" name = "symbol" required/>
+            </p>
+            <p>
+                <label for="example">Example:</label>
+                <input type = "text" name = "example" />
+            </p>
+            <p>    
+                <label for="uses">Uses:</label>
+                <input type = "text" name = "uses" />    
+            </p>
+            <p>   <input type = "submit" value = "submit" /> </p>
+        </form>
+{% endblock %}     
