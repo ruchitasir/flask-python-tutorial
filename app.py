@@ -11,13 +11,6 @@ client = MongoClient()
 db = client.flask_database
 
 
-
-# query for several loops
-# print("Finding all blog posts:")
-# for loop in loops.find():
-#   pprint.pprint(loop)
-# print()
-
 @app.route("/")
 def home():
   return render_template('index.html')
@@ -32,7 +25,7 @@ def loops_home():
 # and it displays the new operator into the existing list on the page
 @app.route("/operators", methods = ['POST', 'GET'])  
 def operators_home():  
-    retrived_operators = db.operators.find()
+    retrived_operators = db.operators.find()  # list(db.operators.find())
     if request.method == 'POST':
       # print('req.form',request.form)
         oper={
